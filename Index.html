@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Avo Clitoral Massager — Hello Nancy</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --pink:#FF30CC;
+  --lime:#CCFD28;
+  --pink-pale:#f3dce2;
+  --pink-light:#fce8f5;
+  --pink-mid:#ffb3ed;
+  --lime-light:#f4ffd4;
+  --dark:#1a1a1a;
+  --mid:#555;
+  --light:#999;
+  --cream:#fdf8f2;
+  --border:#ede0e8;
+}
+body{font-family:"Fraunces",serif;background:#fff;color:var(--dark);font-size:16px;line-height:1.6}
+img{display:block;max-width:100%;height:auto}
+a{text-decoration:none;color:inherit}
+
+/* TRUST BAR */
+.trust-bar{background:var(--pink);display:flex;justify-content:center;gap:48px;padding:10px 16px;font-size:12px;font-weight:600;color:#fff}
+.trust-item{display:flex;align-items:center;gap:8px}
+.trust-item img{width:20px;height:20px;object-fit:contain;filter:brightness(0) invert(1)}
+
+/* ANNOUNCE */
+.announce{background:var(--lime);text-align:center;font-size:12px;padding:10px 16px;font-weight:600;color:var(--dark)}
+.announce a{color:var(--dark);text-decoration:underline}
+
+/* NAV */
+.nav{background:var(--pink-pale);display:flex;align-items:center;justify-content:space-between;padding:16px 40px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,48,204,.1)}
+.logo img{height:32px;object-fit:contain}
+.nav-links{display:flex;gap:28px;font-size:16px;font-weight:500;color:var(--pink);font-family:"Fraunces",serif}
+.nav-right{display:flex;gap:20px;align-items:center;color:var(--pink);font-size:20px}
+
+/* BREADCRUMB */
+.breadcrumb{padding:12px 40px;font-size:12px;color:var(--light);background:#fff;border-bottom:1px solid var(--border);font-family:"Manrope",sans-serif}
+.breadcrumb a{color:var(--light)}
+.breadcrumb span{color:var(--dark)}
+
+/* HERO */
+.hero{display:grid;grid-template-columns:55% 45%;background:var(--cream);align-items:start}
+
+/* GALLERY */
+.gallery{padding:16px 16px 0;position:sticky;top:72px}
+.gallery-main{position:relative;border-radius:14px;overflow:hidden;background:var(--cream)}
+.gallery-main img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
+.gallery-arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.85);border:none;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:16px;color:var(--dark);box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.gallery-arrow.prev{left:12px}
+.gallery-arrow.next{right:12px}
+.gallery-zoom{position:absolute;bottom:12px;right:12px;background:rgba(255,255,255,.85);border:none;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:15px;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.gallery-dots{display:flex;justify-content:center;gap:6px;padding:10px 0}
+.gdot{width:8px;height:8px;border-radius:50%;background:rgba(0,0,0,.2);cursor:pointer;transition:all .2s}
+.gdot.active{background:var(--dark);width:22px;border-radius:4px}
+.gallery-thumbs{display:flex;gap:8px;padding:8px 0 16px;overflow-x:auto;scrollbar-width:none}
+.gallery-thumbs::-webkit-scrollbar{display:none}
+.gthumb{width:70px;height:70px;border-radius:10px;overflow:hidden;flex-shrink:0;border:2px solid transparent;cursor:pointer}
+.gthumb img{width:100%;height:100%;object-fit:cover}
+.gthumb.active{border-color:var(--pink)}
+
+/* PRODUCT INFO */
+.pinfo{padding:32px 36px;display:flex;flex-direction:column;gap:16px;background:var(--cream)}
+.review-row{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--mid)}
+.stars{color:#f5a623;font-size:14px}
+.review-link{color:var(--pink);text-decoration:underline;font-size:12px}
+.ptitle{font-family:"Manrope",sans-serif;font-size:38px;font-weight:600;line-height:1.1;color:var(--dark)}
+.price-save{color:var(--pink);font-size:13px;font-weight:600}
+.price-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:4px}
+.price-now{font-size:24px;font-weight:700;color:var(--dark)}
+.price-orig{font-size:15px;color:var(--light);text-decoration:line-through}
+.price-note{font-size:11px;color:var(--light)}
+.pdivider{border:none;border-top:1px solid var(--border)}
+.pdesc{font-size:13px;line-height:1.8;color:var(--mid)}
+.pdesc em{font-style:italic}
+
+/* TABS */
+.tabs-wrap{border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-top:4px}
+.tabs-nav{display:flex;gap:0;background:var(--pink-light)}
+.tab-btn{flex:1;padding:12px 8px;font-size:13px;font-weight:600;color:var(--mid);background:var(--pink-light);border:none;cursor:pointer;border-bottom:none;transition:all .15s;text-align:center;font-family:"Manrope",sans-serif}
+.tab-btn.active{background:#fff;color:var(--dark);font-weight:700;border-radius:10px 10px 0 0}
+.tab-content{display:none;padding:18px 16px;font-size:13px;color:var(--mid);line-height:1.8;background:#fff}
+.tab-content.active{display:block}
+.tab-content ul{padding-left:20px}
+.tab-content li{margin-bottom:6px}
+.spec-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px}
+.spec-item{display:flex;align-items:center;gap:8px;font-size:12px;padding:8px 10px;background:var(--cream);border-radius:8px;border:1px solid var(--border)}
+.spec-icon{font-size:16px}
+/* Numbered list for What You Get */
+.get-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:12px}
+.get-list li{display:flex;align-items:center;gap:12px;font-size:13px;color:var(--dark)}
+.get-num{width:24px;height:24px;border-radius:50%;background:var(--pink-light);border:1.5px solid var(--pink-mid);color:var(--pink);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+
+/* CTA */
+.cta-btn{background:var(--pink);color:#fff;border:none;padding:16px;border-radius:50px;font-size:14px;font-weight:700;cursor:pointer;width:100%;letter-spacing:.5px;margin-top:4px;text-transform:uppercase}
+.cta-btn:hover{background:#e020bb}
+.cta-price-strike{text-decoration:line-through;opacity:.7;font-weight:400;margin-right:6px}
+.shop-btn{background:#5a31f4;color:#fff;border:none;padding:15px;border-radius:50px;font-size:14px;font-weight:600;cursor:pointer;width:100%;margin-top:10px;display:flex;align-items:center;justify-content:center;gap:6px}
+.shop-btn:hover{background:#4a21e4}
+.shop-btn .shop-logo{font-size:16px;font-weight:800;letter-spacing:-1px}
+.more-payment{text-align:center;font-size:12px;font-weight:600;color:var(--dark);text-transform:uppercase;letter-spacing:.5px;text-decoration:underline;cursor:pointer;margin-top:10px}
+
+/* TRUST MINI */
+.trust-mini{display:flex;justify-content:space-around;padding:12px 0;border-top:1px solid var(--border);margin-top:4px}
+.tm{text-align:center;font-size:10px;color:var(--light);display:flex;flex-direction:column;align-items:center;gap:4px}
+.tm-icon{font-size:20px}
+
+/* SECTIONS */
+.section{padding:48px 40px;border-bottom:1px solid var(--border)}
+.section.cream{background:var(--cream)}
+.section.dark{background:var(--dark)}
+.stitle{font-family:"Manrope",sans-serif;font-size:28px;font-weight:600;margin-bottom:20px;color:var(--dark)}
+.stitle.white{color:#fff}
+
+/* BETA TESTERS */
+.beta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.beta-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:20px}
+.beta-quote{font-size:13px;line-height:1.75;color:var(--mid);font-style:italic;margin-bottom:12px;position:relative;padding-left:16px}
+.beta-quote::before{content:"\201C";position:absolute;left:0;top:-4px;font-size:32px;color:var(--pink);font-family:"Manrope",sans-serif;line-height:1}
+.beta-name{font-size:12px;font-weight:700;color:var(--pink)}
+.beta-role{font-size:10px;color:var(--light)}
+
+/* FEATURES */
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.feat-card{text-align:center;padding:20px}
+.feat-img{width:120px;height:120px;object-fit:contain;margin:0 auto 16px}
+.feat-title{font-size:14px;font-weight:700;color:var(--dark);margin-bottom:8px}
+.feat-desc{font-size:12.5px;color:var(--mid);line-height:1.7}
+
+/* ICON BADGES */
+.badges-row{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;padding:32px 40px;background:var(--cream);border-bottom:1px solid var(--border)}
+.badge-item{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;max-width:100px}
+.badge-img{width:50px;height:50px;object-fit:contain}
+.badge-label{font-size:11px;color:var(--dark);font-weight:500;line-height:1.3}
+
+/* UGC VIDEOS */
+.ugc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.ugc-card{border-radius:12px;aspect-ratio:.6;display:flex;flex-direction:column;justify-content:flex-end;padding:14px;position:relative;overflow:hidden;cursor:pointer}
+.ugc-1{background:linear-gradient(180deg,#cc20bb 0%,#3d0038 100%)}
+.ugc-2{background:linear-gradient(180deg,#e030d0 0%,#300030 100%)}
+.ugc-3{background:linear-gradient(180deg,#aa18a8 0%,#280028 100%)}
+.ugc-4{background:linear-gradient(180deg,#d828c8 0%,#2e0028 100%)}
+.ugc-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;background:rgba(255,48,204,.35);border:2px solid rgba(255,48,204,.7);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:15px}
+.ugc-cap{font-size:11px;color:rgba(255,255,255,.9);line-height:1.4;font-style:italic}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:0}
+.faq-item{border-bottom:1px solid var(--border);overflow:hidden}
+.faq-q{width:100%;background:none;border:none;padding:16px 0;font-size:13.5px;font-weight:600;color:var(--dark);display:flex;justify-content:space-between;align-items:center;cursor:pointer;text-align:left;gap:12px}
+.faq-q .icon{font-size:18px;color:var(--pink);flex-shrink:0;transition:transform .2s}
+.faq-q.open .icon{transform:rotate(45deg)}
+.faq-a{font-size:12.5px;color:var(--mid);line-height:1.8;padding-bottom:16px;display:none}
+.faq-a.open{display:block}
+.faq-a ul{padding-left:20px;margin-top:8px}
+.faq-a li{margin-bottom:4px}
+.faq-center{text-align:center;margin-top:24px;font-size:13px;color:var(--mid)}
+.faq-center a{color:var(--pink);text-decoration:underline}
+
+/* ALSO LIKE */
+.also-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.also-card{border:1px solid var(--border);border-radius:12px;overflow:hidden;cursor:pointer;transition:border-color .2s}
+.also-card:hover{border-color:var(--pink)}
+.also-img-wrap{aspect-ratio:.85;overflow:hidden;background:var(--cream)}
+.also-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.also-card:hover .also-img-wrap img{transform:scale(1.04)}
+.also-body{padding:14px}
+.also-name{font-size:13px;font-weight:700;color:var(--dark);margin-bottom:4px}
+.also-desc{font-size:11px;color:var(--light);line-height:1.5;margin-bottom:8px}
+.also-price{font-size:14px;font-weight:700;color:var(--dark)}
+.also-orig{font-size:12px;color:var(--light);text-decoration:line-through;margin-left:6px}
+.also-save{font-size:11px;color:var(--pink);font-weight:600;margin-left:4px}
+
+/* NEWSLETTER */
+.nl{background:var(--pink-pale);padding:52px 40px;text-align:center}
+.nl-logo{height:36px;margin:0 auto 16px}
+.nl-title{font-family:"Manrope",sans-serif;font-size:22px;font-weight:600;margin-bottom:6px;color:var(--dark)}
+.nl-sub{font-size:13px;color:var(--mid);margin-bottom:20px}
+.nl-form{display:flex;justify-content:center;gap:10px;max-width:440px;margin:0 auto}
+.nl-form input{flex:1;padding:12px 16px;border:1px solid var(--pink-mid);border-radius:8px;font-size:13px;outline:none;font-family:"Fraunces",serif;background:#fff}
+.nl-form button{background:var(--dark);color:#fff;border:none;padding:12px 22px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap}
+
+/* FOOTER */
+.footer{background:var(--dark);color:#fff;padding:44px 40px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px}
+.footer-logo{height:28px;margin-bottom:12px;filter:brightness(0) invert(1)}
+.fdesc{font-size:12px;color:rgba(255,255,255,.45);line-height:1.7;margin-bottom:12px}
+.fsocial{display:flex;gap:12px;margin-top:8px}
+.fsocial a{font-size:18px;color:rgba(255,255,255,.5)}
+.fh{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:12px}
+.flinks{list-style:none;display:flex;flex-direction:column;gap:8px}
+.flinks li a{font-size:12px;color:rgba(255,255,255,.6)}
+.fbtm{background:#111;text-align:center;font-size:11px;color:rgba(255,255,255,.3);padding:14px;display:flex;justify-content:center;gap:24px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><img src="https://hellonancy.com/cdn/shop/files/truck.png?v=1774503830&width=30" alt="">Free shipping</div>
+  <div class="trust-item"><img src="https://hellonancy.com/cdn/shop/files/anonymous.png?v=1774503834&width=30" alt="">Discreet packaging</div>
+  <div class="trust-item"><img src="https://hellonancy.com/cdn/shop/files/shield.png?v=1774503834&width=30" alt="">30-day guarantee</div>
+</div>
+
+<!-- ANNOUNCE -->
+<div class="announce">
+  <a href="#">Pride Month Sale 🌈 Final minutes to save up to 50% off on last few items 🌈 No coupon needed.</a>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="#"><img src="https://hellonancy.com/cdn/shop/files/Nancy_Logo_Pink.png?v=1775058962&width=439" alt="Hello Nancy" style="height:28px;object-fit:contain"></a>
+  <div class="nav-links">
+    <span>About us</span><span>Shop ▾</span><span>Sex Ed</span><span>Blog</span>
+  </div>
+  <div class="nav-right">
+    <span>🔍</span><span>🛒</span>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="#">Home</a> / <a href="#">Shop</a> / <span>Avo Clitoral Massager</span>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="gallery">
+    <div class="gallery-main">
+      <img id="mainImgEl" src="https://hellonancy.com/cdn/shop/files/Untitled_Capture0776_2_4a5f299c-2c95-4dba-9f28-ab76844a5f11.webp?v=1762420124&width=900" alt="Avo Clitoral Massager">
+      <button class="gallery-arrow prev" onclick="changeImg(-1)">‹</button>
+      <button class="gallery-arrow next" onclick="changeImg(1)">›</button>
+      <button class="gallery-zoom">⊕</button>
+    </div>
+    <div class="gallery-dots" id="galleryDots"></div>
+    <div class="gallery-thumbs" id="galleryThumbs"></div>
+  </div>
+
+  <div class="pinfo">
+    <div class="review-row">
+      <span class="stars">★★★★★</span>
+      <span>4.8</span>
+      <a href="#reviews" class="review-link">878 reviews</a>
+    </div>
+
+    <div>
+      <h1 class="ptitle">Avo Clitoral Massager</h1>
+    </div>
+
+    <div>
+      <div class="price-save">Save ₱6,300.00</div>
+      <div class="price-row">
+        <span class="price-now">₱6,200.00 PHP</span>
+        <span class="price-orig">₱12,500.00 PHP</span>
+      </div>
+      <div class="price-note" style="margin-top:4px">Tax included. <a href="#" style="color:var(--pink);text-decoration:underline">Shipping calculated</a> at checkout</div>
+    </div>
+
+    <hr class="pdivider">
+
+    <!-- AS SEEN IN -->
+    <div>
+      <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--light);margin-bottom:12px">As Seen In</div>
+      <div style="display:flex;align-items:center;gap:22px;flex-wrap:wrap">
+        <span style="font-family:'Manrope',sans-serif;font-size:16px;font-weight:600;color:var(--dark);font-style:italic;line-height:1.1;border:1.5px solid var(--dark);padding:3px 6px;font-size:13px">The<br>Guardian</span>
+        <span style="font-size:18px;font-weight:900;color:var(--dark);letter-spacing:-1px;font-family:Arial,sans-serif">VICE</span>
+        <span style="font-size:14px;font-weight:700;letter-spacing:4px;color:var(--dark);font-family:'Manrope',sans-serif;text-transform:uppercase">TATLER</span>
+        <span style="display:flex;align-items:center;gap:3px;font-size:13px;font-weight:700;color:var(--dark)"><svg width="18" height="18" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50 10 Q60 30 50 50 Q65 35 85 40 Q70 55 50 50 Q65 65 60 85 Q50 68 50 50 Q35 65 15 60 Q30 45 50 50 Q35 35 40 15 Q50 32 50 50 Q40 30 50 10Z" fill="#0b6" stroke="none"/><circle cx="50" cy="50" r="8" fill="white"/></svg>NBC</span>
+        <span style="display:flex;align-items:center;gap:3px;font-size:13px;font-weight:700;color:var(--dark)"><svg width="18" height="18" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><ellipse cx="50" cy="50" rx="48" ry="48" fill="none" stroke="#000" stroke-width="5"/><ellipse cx="50" cy="50" rx="24" ry="16" fill="none" stroke="#000" stroke-width="5"/><circle cx="50" cy="50" r="6" fill="#000"/></svg>CBS</span>
+      </div>
+    </div>
+
+    <hr class="pdivider">
+
+    <!-- CLINICALLY RECOGNIZED — Avo specific -->
+    <div>
+      <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--light);margin-bottom:10px">Clinically Recognized</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <div style="background:var(--pink-light);border:1px solid var(--pink-mid);border-radius:20px;padding:10px 14px;font-size:12px;font-weight:500;color:var(--dark);display:flex;align-items:center;gap:6px;flex:1;min-width:140px;text-align:center;justify-content:center">✅ Validated air-suction technology</div>
+        <div style="background:var(--pink-light);border:1px solid var(--pink-mid);border-radius:20px;padding:10px 14px;font-size:12px;font-weight:500;color:var(--dark);display:flex;align-items:center;gap:6px;flex:1;min-width:140px;text-align:center;justify-content:center">🌿 Medical-grade IPX7 certified</div>
+        <div style="background:var(--pink-light);border:1px solid var(--pink-mid);border-radius:20px;padding:10px 14px;font-size:12px;font-weight:500;color:var(--dark);display:flex;align-items:center;gap:6px;flex:1;min-width:140px;text-align:center;justify-content:center">💜 Recommended by sexual wellness experts</div>
+      </div>
+    </div>
+
+    <!-- 4 FEATURE BADGES -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+      <div style="background:#fff;border:1px solid var(--border);border-radius:10px;padding:12px;font-size:12px;font-weight:500;color:var(--dark);display:flex;align-items:center;gap:8px">🌀 12 unique intensities and patterns</div>
+      <div style="background:#fff;border:1px solid var(--border);border-radius:10px;padding:12px;font-size:12px;font-weight:500;color:var(--dark);display:flex;align-items:center;gap:8px">🤫 Quiet and discreet (Shhh!)</div>
+      <div style="background:#fff;border:1px solid var(--border);border-radius:10px;padding:12px;font-size:12px;font-weight:500;color:var(--dark);display:flex;align-items:center;gap:8px">🌿 Medical-grade silicone</div>
+      <div style="background:#fff;border:1px solid var(--border);border-radius:10px;padding:12px;font-size:12px;font-weight:500;color:var(--dark);display:flex;align-items:center;gap:8px">💦 Waterproof (USB-C & Magnetic Compatible)</div>
+    </div>
+
+    <hr class="pdivider">
+
+    <div class="pdesc">
+      When life gives you avocadoes, don't make guac. Scream <em>holy guacamole</em> instead!<br><br>
+      Sure, Avo is adorable, but don't let that fool you. It's a clit sucker that is downright <em>possessed</em> with pleasure. This little green gem may look innocent, but it packs a punch, with a supercharged motor that's so intense you'll feel like smashed avo afterwards.<br><br>
+      With 12 graduating patterns and intensities, Avo will leave you dripping in so much ecstasy that you'll need an exorcist. It's also made from silky, body-safe silicone and is fully waterproof, allowing you to have those avocad-O's anywhere, anytime.<br><br>
+      So, don't take our word for it! This sexy little thing is just ripe for the picking 🥑
+    </div>
+
+    <div class="tabs-wrap">
+      <div class="tabs-nav">
+        <button class="tab-btn active" onclick="switchTab(this,'tab-get')">What you get</button>
+        <button class="tab-btn" onclick="switchTab(this,'tab-spec')">Specifications</button>
+        <button class="tab-btn" onclick="switchTab(this,'tab-use')">How to use</button>
+      </div>
+      <div id="tab-get" class="tab-content active">
+        <ul class="get-list">
+          <li><span class="get-num">1</span>Avo Clitoral Massager</li>
+          <li><span class="get-num">2</span>USB pin charger</li>
+          <li><span class="get-num">3</span>Avo self-love manual</li>
+        </ul>
+      </div>
+      <div id="tab-spec" class="tab-content">
+        <div class="spec-grid">
+          <div class="spec-item"><span class="spec-icon">🌿</span>Premium, body-safe silicone</div>
+          <div class="spec-item"><span class="spec-icon">💦</span>Waterproof (IPX7)</div>
+          <div class="spec-item"><span class="spec-icon">🌀</span>12 unique intensities and patterns</div>
+          <div class="spec-item"><span class="spec-icon">🤫</span>Quiet and discreet (Shhh!)</div>
+          <div class="spec-item"><span class="spec-icon">🔋</span>90-minute play time</div>
+          <div class="spec-item"><span class="spec-icon">⚡</span>90-minute charge time</div>
+        </div>
+      </div>
+      <div id="tab-use" class="tab-content">
+        <p>To get started, simply press and hold the power button on the remote. You'll see Avo light up and jolt to life.</p><br>
+        <p>The first level is a gentle start, allowing you to explore various areas of your vulva before focusing on the clitoris.</p><br>
+        <p>Press again to cycle through 12 unique intensities and patterns. To turn Avo off, hold the button for 3 seconds at any moment.</p>
+      </div>
+    </div>
+
+    <button class="cta-btn"><span class="cta-price-strike">₱12,500</span> ADD TO CART — ₱6,200</button>
+    <button class="shop-btn">Buy with <span class="shop-logo">shop</span></button>
+    <div class="more-payment">More payment options</div>
+
+    <div class="trust-mini">
+      <div class="tm"><img src="https://hellonancy.com/cdn/shop/files/fi_14243738.svg?v=1731059274&width=40" style="width:28px;height:28px;margin-bottom:4px" alt=""><span>Discreet<br>shipping</span></div>
+      <div class="tm"><img src="https://hellonancy.com/cdn/shop/files/security_2.svg?v=1731059275&width=40" style="width:28px;height:28px;margin-bottom:4px" alt=""><span>30-day satisfaction<br>guarantee</span></div>
+      <div class="tm"><img src="https://hellonancy.com/cdn/shop/files/smiley_1.svg?v=1731059274&width=40" style="width:28px;height:28px;margin-bottom:4px" alt=""><span>Limited<br>stock</span></div>
+    </div>
+
+    <!-- DOCTOR'S RECOMMENDATION PLACEHOLDER -->
+    <div style="border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-top:8px">
+      <!-- Header tabs row -->
+      <div style="background:var(--pink-pale);padding:10px 16px;display:flex;gap:6px;flex-wrap:wrap;border-bottom:1px solid var(--pink-mid)">
+        <div style="background:var(--pink);color:#fff;border-radius:20px;padding:6px 14px;font-size:11px;font-weight:600;cursor:pointer">Doctor Review</div>
+        <div style="background:transparent;color:var(--mid);border-radius:20px;padding:6px 14px;font-size:11px;font-weight:500;cursor:pointer">How to Use</div>
+        <div style="background:transparent;color:var(--mid);border-radius:20px;padding:6px 14px;font-size:11px;font-weight:500;cursor:pointer">Specifications</div>
+        <div style="background:transparent;color:var(--mid);border-radius:20px;padding:6px 14px;font-size:11px;font-weight:500;cursor:pointer">Intensity Levels</div>
+        <div style="background:transparent;color:var(--mid);border-radius:20px;padding:6px 14px;font-size:11px;font-weight:500;cursor:pointer">Discreetness</div>
+        <div style="background:transparent;color:var(--mid);border-radius:20px;padding:6px 14px;font-size:11px;font-weight:500;cursor:pointer">Couples Play</div>
+      </div>
+
+      <!-- Placeholder body -->
+      <div style="padding:28px 24px;background:#fafafa;text-align:center;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px">
+        <!-- Avatar placeholder -->
+        <div style="width:64px;height:64px;border-radius:50%;background:#e8e8e8;display:flex;align-items:center;justify-content:center;font-size:28px">👩‍⚕️</div>
+        <!-- Title -->
+        <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--light)">Doctor's Recommendation</div>
+        <!-- Placeholder lines -->
+        <div style="width:100%;max-width:340px;display:flex;flex-direction:column;gap:8px">
+          <div style="height:12px;background:#e8e8e8;border-radius:6px;width:100%"></div>
+          <div style="height:12px;background:#e8e8e8;border-radius:6px;width:85%"></div>
+          <div style="height:12px;background:#e8e8e8;border-radius:6px;width:90%"></div>
+        </div>
+        <!-- Doctor name placeholder -->
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;margin-top:4px">
+          <div style="height:12px;background:#e8e8e8;border-radius:6px;width:140px"></div>
+          <div style="height:10px;background:#f0f0f0;border-radius:6px;width:200px;margin-top:2px"></div>
+        </div>
+        <div style="font-size:11px;color:var(--light);font-style:italic;margin-top:4px">Doctor's recommendation coming soon</div>
+        <!-- CTA placeholder -->
+        <div style="border:1.5px solid var(--pink-mid);border-radius:20px;padding:8px 20px;font-size:12px;font-weight:600;color:var(--pink);cursor:pointer">Open the full clinical reference →</div>
+        <!-- Disclaimer -->
+        <div style="font-size:10px;color:var(--light);max-width:320px;line-height:1.5">Avo™ is a wellness device, not FDA-cleared as a treatment. Talk with your physician about your situation.</div>
+      </div>
+    </div>
+
+    <!-- ONLY AVAILABLE HERE BANNER -->
+    
+  </div>
+</div>
+
+<!-- ONLY AVAILABLE HERE — CARD STYLE -->
+<div style="background:var(--cream);padding:24px 40px 32px">
+  <div style="background:var(--pink);border-radius:16px;padding:24px 36px;display:flex;align-items:center;gap:32px">
+    <div style="flex-shrink:0">
+      <div style="background:var(--lime);border-radius:30px;padding:10px 20px;font-size:13px;font-weight:800;color:var(--dark);display:flex;align-items:center;gap:7px;white-space:nowrap">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Only Available Here
+      </div>
+    </div>
+    <div style="flex:1">
+      <div style="font-size:13px;font-weight:600;color:#fff;line-height:1.7">Nancy products are exclusively designed, manufactured, and fulfilled through <span style="text-decoration:underline;font-weight:800;cursor:pointer">www.hellonancy.com</span></div>
+      <div style="font-size:12px;color:rgba(255,255,255,.85);line-height:1.7;margin-top:4px">Beware of fraudulent websites or counterfeit items; these may expose you to credit card scams or toys that are hazardous for intimate use. No refunds or reimbursements will be provided for orders placed through unauthorized sellers.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ICON BADGES -->
+<div style="background:linear-gradient(180deg,#FFFE87 0%,#f5f5a0 100%);padding:56px 40px;display:flex;justify-content:center;gap:80px;flex-wrap:wrap">
+  <div style="display:flex;flex-direction:column;align-items:center;gap:14px">
+    <div style="width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,.7);display:flex;align-items:center;justify-content:center">
+      <img src="https://hellonancy.com/cdn/shop/files/nancy_graphic_intensity_89bfe8bf-68ca-4ae3-b8db-edac4fcd07f7.svg?v=1773074051&width=700" style="width:36px;height:36px;object-fit:contain" alt="">
+    </div>
+    <div style="font-size:13px;font-weight:600;color:var(--pink);text-align:center">12 unique patterns</div>
+  </div>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:14px">
+    <div style="width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,.7);display:flex;align-items:center;justify-content:center">
+      <img src="https://hellonancy.com/cdn/shop/files/noun-drop-1797148_3fb47920-9fbb-4cd1-aae6-60de946188a8.svg?v=1680098927&width=700" style="width:36px;height:36px;object-fit:contain" alt="">
+    </div>
+    <div style="font-size:13px;font-weight:600;color:var(--pink);text-align:center">Waterproof</div>
+  </div>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:14px">
+    <div style="width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,.7);display:flex;align-items:center;justify-content:center">
+      <img src="https://hellonancy.com/cdn/shop/files/Nancy_Graphic_icons-12_03f7b682-c1db-4fbe-8cf0-e99a12903d44.svg?v=1688728673&width=500" style="width:36px;height:36px;object-fit:contain" alt="">
+    </div>
+    <div style="font-size:13px;font-weight:600;color:var(--pink);text-align:center">Discreet shipping</div>
+  </div>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:14px">
+    <div style="width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,.7);display:flex;align-items:center;justify-content:center">
+      <img src="https://hellonancy.com/cdn/shop/files/Asset_1_4x_c2356914-4e35-4567-91d8-8046d5faac52.png?v=1700289217&width=160" style="width:36px;height:36px;object-fit:contain" alt="">
+    </div>
+    <div style="font-size:13px;font-weight:600;color:var(--pink);text-align:center">Easy to use</div>
+  </div>
+</div>
+
+<!-- WHAT THE EXPERTS SAY -->
+<div class="section cream" style="text-align:center">
+  <h2 style="font-family:'Manrope',sans-serif;font-size:26px;font-weight:600;color:var(--pink);margin-bottom:8px;letter-spacing:normal">What the Experts Say</h2>
+  <p style="font-size:13px;color:var(--light);margin-bottom:32px">Trusted by medical professionals and sexual health experts</p>
+
+  <div style="background:#fff;border:1px solid var(--border);border-radius:16px;padding:40px;max-width:820px;margin:0 auto;display:flex;gap:36px;align-items:center;text-align:left">
+    <!-- Doctor photo placeholder -->
+    <div style="width:200px;height:220px;border-radius:12px;background:#f0f0f0;flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px">
+      <div style="font-size:48px">👩‍⚕️</div>
+      <div style="font-size:11px;color:var(--light);font-style:italic">Photo coming soon</div>
+    </div>
+    <!-- Quote + name -->
+    <div style="flex:1">
+      <!-- Quote placeholder lines -->
+      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:32px">
+        <div style="height:14px;background:#f0f0f0;border-radius:6px;width:100%"></div>
+        <div style="height:14px;background:#f0f0f0;border-radius:6px;width:95%"></div>
+        <div style="height:14px;background:#f0f0f0;border-radius:6px;width:100%"></div>
+        <div style="height:14px;background:#f0f0f0;border-radius:6px;width:88%"></div>
+        <div style="height:14px;background:#f0f0f0;border-radius:6px;width:60%"></div>
+      </div>
+      <hr style="border:none;border-top:1px solid var(--border);margin-bottom:20px">
+      <!-- Doctor name placeholder -->
+      <div style="height:18px;background:#f5e8f5;border-radius:6px;width:180px;margin-bottom:10px"></div>
+      <div style="height:12px;background:#f0f0f0;border-radius:6px;width:280px"></div>
+      <div style="margin-top:16px;font-size:11px;color:var(--light);font-style:italic">Doctor's recommendation coming soon</div>
+    </div>
+  </div>
+</div>
+
+<!-- BETA TESTERS -->
+<div class="section cream" id="reviews">
+  <h2 class="stitle">What our beta testers say</h2>
+  <div class="beta-grid">
+    <div class="beta-card">
+      <div class="beta-quote">My pussy ate this avo right up! Brunch is served, LOL!</div>
+      <div class="beta-name">Diana</div>
+      <div class="beta-role">Beta tester</div>
+    </div>
+    <div class="beta-card">
+      <div class="beta-quote">I'm somewhat of a 'pro' to the vibe game; I definitely have a good amount of experience. So, I didn't have high expectations for the Avo. But I was so shocked! Avo is super powerful! The first setting is great for newbies, but the higher modes have enough power to give you a mindblowing orgasm. I adore Avo!</div>
+      <div class="beta-name">Kristy</div>
+      <div class="beta-role">Beta tester</div>
+    </div>
+    <div class="beta-card">
+      <div class="beta-quote">I cannot believe this avocado is a sex toy, and that it is SO GOOD. What a design!! It's so fun to look at and SO FUN to use too.</div>
+      <div class="beta-name">Margie</div>
+      <div class="beta-role">Beta tester</div>
+    </div>
+  </div>
+</div>
+
+<!-- CHOOSE AVO OR LEM -->
+<div class="section">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px">
+    <h2 class="stitle" style="margin-bottom:0">Avo or Lem — Which is Right for You?</h2>
+    <span style="background:var(--lime-light);border:1px solid #aadd00;color:#3a5c00;font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;white-space:nowrap">+ New — §3</span>
+  </div>
+  <p style="font-size:13px;color:var(--light);margin-bottom:24px">Stop guessing. Here's the honest breakdown.</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+    <!-- Choose Avo -->
+    <div style="background:#f4ffd4;border:2px solid var(--lime);border-radius:14px;padding:24px">
+      <div style="font-size:17px;font-weight:700;color:var(--dark);margin-bottom:16px;display:flex;align-items:center;gap:8px">🥑 Choose Avo if you...</div>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px">
+        <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--dark)"><span style="width:20px;height:20px;border-radius:50%;background:var(--lime);display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;flex-shrink:0">✓</span>Want MORE power than Lem (supercharged motor)</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--dark)"><span style="width:20px;height:20px;border-radius:50%;background:var(--lime);display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;flex-shrink:0">✓</span>Are experienced with air-suction toys</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--dark)"><span style="width:20px;height:20px;border-radius:50%;background:var(--lime);display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;flex-shrink:0">✓</span>Prefer intense, deep stimulation</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--dark)"><span style="width:20px;height:20px;border-radius:50%;background:var(--lime);display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;flex-shrink:0">✓</span>Want 12 patterns at a higher intensity range</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--dark)"><span style="width:20px;height:20px;border-radius:50%;background:var(--lime);display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;flex-shrink:0">✓</span>Love the playful avocado design</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--dark)"><span style="width:20px;height:20px;border-radius:50%;background:var(--lime);display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;flex-shrink:0">✓</span>Are ready to invest in a powerful upgrade</div>
+      </div>
+      <a href="#" style="display:inline-block;background:var(--lime);color:var(--dark);font-size:13px;font-weight:700;padding:11px 22px;border-radius:8px;text-decoration:none">Shop Avo — ₱6,200 →</a>
+    </div>
+    <!-- Choose Lem -->
+    <div style="background:var(--pink-light);border:2px solid var(--pink);border-radius:14px;padding:24px">
+      <div style="font-size:17px;font-weight:700;color:var(--dark);margin-bottom:16px;display:flex;align-items:center;gap:8px">🍋 Choose Lem if you...</div>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px">
+        <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--dark)"><span style="width:20px;height:20px;border-radius:50%;background:var(--pink);display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:#fff;flex-shrink:0">✓</span>Are new to air-suction toys</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--dark)"><span style="width:20px;height:20px;border-radius:50%;background:var(--pink);display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:#fff;flex-shrink:0">✓</span>Want clinical backing + wellness positioning</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--dark)"><span style="width:20px;height:20px;border-radius:50%;background:var(--pink);display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:#fff;flex-shrink:0">✓</span>Prefer a gentle-to-powerful range</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--dark)"><span style="width:20px;height:20px;border-radius:50%;background:var(--pink);display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:#fff;flex-shrink:0">✓</span>Need medically-recognized credibility</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--dark)"><span style="width:20px;height:20px;border-radius:50%;background:var(--pink);display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:#fff;flex-shrink:0">✓</span>#1 best seller loved by 700k+ women</div>
+      </div>
+      <a href="#" style="display:inline-block;background:var(--pink);color:#fff;font-size:13px;font-weight:700;padding:11px 22px;border-radius:8px;text-decoration:none">Shop Lem — ₱5,700 →</a>
+    </div>
+  </div>
+</div>
+
+<!-- AVO VS COMPETITION TABLE -->
+<div class="section cream">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:28px">
+    <h2 class="stitle" style="margin-bottom:0">Avo vs the Competition</h2>
+    <span style="background:var(--lime-light);border:1px solid #aadd00;color:#3a5c00;font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;white-space:nowrap">+ New — §4</span>
+  </div>
+  <div style="border-radius:16px;overflow:hidden;border:1px solid var(--border)">
+    <!-- Lime verified banner -->
+    <div style="background:var(--lime);padding:14px 24px;text-align:center;font-size:13px;font-weight:600;color:var(--dark)">
+      Verified comparison based on real customer reviews and product specifications.
+    </div>
+    <div style="overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:13px">
+        <thead>
+          <tr>
+            <th style="background:#fafafa;padding:16px 18px;text-align:left;font-size:11px;font-weight:600;color:var(--light);width:22%;border-bottom:1px solid var(--border)"></th>
+            <th style="background:var(--pink);padding:16px 18px;text-align:center;font-size:13px;font-weight:800;color:#fff;border-bottom:3px solid var(--pink);letter-spacing:.5px">AVO by Nancy</th>
+            <th style="background:var(--pink-light);padding:16px 18px;text-align:center;font-size:13px;font-weight:800;color:var(--pink);border-bottom:3px solid var(--pink-mid);letter-spacing:.5px">LEM by Nancy</th>
+            <th style="background:#fafafa;padding:16px 18px;text-align:center;font-size:11px;font-weight:700;color:var(--dark);border-bottom:1px solid var(--border);letter-spacing:.5px;text-transform:uppercase">SATISFYER</th>
+            <th style="background:#fafafa;padding:16px 18px;text-align:center;font-size:11px;font-weight:700;color:var(--dark);border-bottom:1px solid var(--border);letter-spacing:.5px;text-transform:uppercase">WOMANIZER</th>
+            <th style="background:#fafafa;padding:16px 18px;text-align:center;font-size:11px;font-weight:700;color:var(--dark);border-bottom:1px solid var(--border);letter-spacing:.5px;text-transform:uppercase">LELO</th>
+            <th style="background:#fafafa;padding:16px 18px;text-align:center;font-size:11px;font-weight:700;color:var(--dark);border-bottom:1px solid var(--border);letter-spacing:.5px;text-transform:uppercase">ROSE TOY</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Trustpilot Score -->
+          <tr>
+            <td style="padding:14px 18px;border-bottom:1px solid var(--border);color:var(--mid);font-size:13px">Trustpilot Score</td>
+            <td style="padding:14px 18px;border-bottom:1px solid var(--border);border-left:2px solid var(--pink);border-right:2px solid var(--pink);background:#fff5fc;text-align:center;font-size:22px;font-weight:800;color:var(--pink)">4.8</td>
+            <td style="padding:14px 18px;border-bottom:1px solid var(--border);border-left:1px solid var(--pink-mid);border-right:1px solid var(--pink-mid);background:#fff5fc;text-align:center;font-size:22px;font-weight:800;color:var(--pink)">4.7</td>
+            <td style="padding:14px 18px;border-bottom:1px solid var(--border);text-align:center"><span style="font-size:18px;font-weight:800;color:#e74c3c">1.9</span><br><span style="font-size:10px;color:var(--light)">(Poor)</span></td>
+            <td style="padding:14px 18px;border-bottom:1px solid var(--border);text-align:center"><span style="font-size:18px;font-weight:800;color:#e67e22">3.2</span><br><span style="font-size:10px;color:var(--light)">(Average)</span></td>
+            <td style="padding:14px 18px;border-bottom:1px solid var(--border);text-align:center"><span style="font-size:18px;font-weight:800;color:#e67e22">3.7</span><br><span style="font-size:10px;color:var(--light)">(Average)</span></td>
+            <td style="padding:14px 18px;border-bottom:1px solid var(--border);text-align:center;font-weight:700;color:var(--dark)">Inconsistent<br><span style="font-size:10px;color:var(--light);font-weight:400">(N/A)</span></td>
+          </tr>
+          <!-- Discreet Design -->
+          <tr style="background:#fdf8fc">
+            <td style="padding:14px 18px;border-bottom:1px solid var(--border);color:var(--mid)">Discreet Design</td>
+            <td style="padding:14px 18px;border-bottom:1px solid var(--border);border-left:2px solid var(--pink);border-right:2px solid var(--pink);background:#fff5fc;text-align:center">
+              <div style="width:36px;height:36px;border-radius:50%;background:var(--lime);display:inline-flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;color:var(--pink)">N</div>
+            </td>
+            <td style="padding:14px 18px;border-bottom:1px solid var(--border);border-left:1px solid var(--pink-mid);border-right:1px solid var(--pink-mid);background:#fff5fc;text-align:center"><div style="width:36px;height:36px;border-radius:50%;background:var(--lime);display:inline-flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;color:var(--pink)">N</div></td>
+            <td style="padding:14px 18px;border-bottom:1px solid var(--border);text-align:center;color:#ddd;font-size:18px">✗</td>
+            <td style="padding:14px 18px;border-bottom:1px solid var(--border);text-align:center;color:#ddd;font-size:18px">✗</td>
+            <td style="padding:14px 18px;border-bottom:1px solid var(--border);text-align:center;color:#ddd;font-size:18px">✗</td>
+            <td style="padding:14px 18px;border-bottom:1px solid var(--border);text-align:center;color:#2ecc71;font-size:18px;font-weight:700">✓</td>
+          </tr>
+          <!-- Power Level -->
+          <tr>
+            <td style="padding:14px 18px;border-bottom:1px solid var(--border);color:var(--mid)">Power Level</td>
+            <td style="padding:14px 18px;border-bottom:1px solid var(--border);border-left:2px solid var(--pink);border-right:2px solid var(--pink);background:#fff5fc;text-align:center">
+              <div style="width:36px;height:36px;border-radius:50%;background:var(--lime);display:inline-flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;color:var(--pink)">N</div>
+            </td>
+            <td style="padding:14px 18px;border-bottom:1px solid var(--border);border-left:1px solid var(--pink-mid);border-right:1px solid var(--pink-mid);background:#fff5fc;text-align:center;color:#ddd;font-size:18px">✗</td>
+            <td style="padding:14px 18px;border-bottom:1px solid var(--border);text-align:center;color:#ddd;font-size:18px">✗</td>
+            <td style="padding:14px 18px;border-bottom:1px solid var(--border);text-align:center;color:#ddd;font-size:18px">✗</td>
+            <td style="padding:14px 18px;border-bottom:1px solid var(--border);text-align:center;color:#ddd;font-size:18px">✗</td>
+            <td style="padding:14px 18px;border-bottom:1px solid var(--border);text-align:center;color:#ddd;font-size:18px">✗</td>
+          </tr>
+          <!-- Noise Level -->
+          <tr style="background:#fdf8fc">
+            <td style="padding:14px 18px;border-bottom:1px solid var(--border);color:var(--mid)">Noise Level</td>
+            <td style="padding:14px 18px;border-bottom:1px solid var(--border);border-left:2px solid var(--pink);border-right:2px solid var(--pink);background:#fff5fc;text-align:center;font-size:12px;font-weight:700;color:var(--pink)">Whisper-Quiet<br><span style="font-size:10px;font-weight:400;color:var(--light)">(Roommate-Proof)</span></td>
+            <td style="padding:14px 18px;border-bottom:1px solid var(--border);border-left:1px solid var(--pink-mid);border-right:1px solid var(--pink-mid);background:#fff5fc;text-align:center;font-size:12px;font-weight:700;color:var(--pink)">Whisper-Quiet<br><span style="font-size:10px;font-weight:400;color:var(--light)">(Roommate-Proof)</span></td>
+            <td style="padding:14px 18px;border-bottom:1px solid var(--border);text-align:center;font-size:12px;color:var(--mid)">Quiet</td>
+            <td style="padding:14px 18px;border-bottom:1px solid var(--border);text-align:center;font-size:12px;color:var(--mid)">Quiet</td>
+            <td style="padding:14px 18px;border-bottom:1px solid var(--border);text-align:center;font-size:12px;color:var(--mid)">Quiet</td>
+            <td style="padding:14px 18px;border-bottom:1px solid var(--border);text-align:center;font-size:12px;font-weight:700;color:#e74c3c">Loud</td>
+          </tr>
+          <!-- Cute Design Name -->
+          <tr>
+            <td style="padding:14px 18px;border-bottom:1px solid var(--border);color:var(--mid)">Cute Name</td>
+            <td style="padding:14px 18px;border-bottom:1px solid var(--border);border-left:2px solid var(--pink);border-right:2px solid var(--pink);background:#fff5fc;text-align:center">
+              <div style="width:36px;height:36px;border-radius:50%;background:var(--lime);display:inline-flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;color:var(--pink)">N</div>
+            </td>
+            <td style="padding:14px 18px;border-bottom:1px solid var(--border);border-left:1px solid var(--pink-mid);border-right:1px solid var(--pink-mid);background:#fff5fc;text-align:center"><div style="width:36px;height:36px;border-radius:50%;background:var(--lime);display:inline-flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;color:var(--pink)">N</div></td>
+            <td style="padding:14px 18px;border-bottom:1px solid var(--border);text-align:center;font-size:12px;font-weight:700;color:#e74c3c">Terrible Name</td>
+            <td style="padding:14px 18px;border-bottom:1px solid var(--border);text-align:center;font-size:12px;font-weight:700;color:#e74c3c">Terrible Name</td>
+            <td style="padding:14px 18px;border-bottom:1px solid var(--border);text-align:center;font-size:12px;color:var(--light)">Neutral</td>
+            <td style="padding:14px 18px;border-bottom:1px solid var(--border);text-align:center;font-size:12px;color:var(--light)">Neutral</td>
+          </tr>
+          <!-- Discreet Packaging -->
+          <tr style="background:#fdf8fc">
+            <td style="padding:14px 18px;border-bottom:1px solid var(--border);color:var(--mid)">Discreet Packaging</td>
+            <td style="padding:14px 18px;border-bottom:1px solid var(--border);border-left:2px solid var(--pink);border-right:2px solid var(--pink);background:#fff5fc;text-align:center">
+              <div style="width:36px;height:36px;border-radius:50%;background:var(--lime);display:inline-flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;color:var(--pink)">N</div>
+            </td>
+            <td style="padding:14px 18px;border-bottom:1px solid var(--border);border-left:1px solid var(--pink-mid);border-right:1px solid var(--pink-mid);background:#fff5fc;text-align:center"><div style="width:36px;height:36px;border-radius:50%;background:var(--lime);display:inline-flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;color:var(--pink)">N</div></td>
+            <td style="padding:14px 18px;border-bottom:1px solid var(--border);text-align:center;color:#ddd;font-size:18px">✗</td>
+            <td style="padding:14px 18px;border-bottom:1px solid var(--border);text-align:center;color:#ddd;font-size:18px">✗</td>
+            <td style="padding:14px 18px;border-bottom:1px solid var(--border);text-align:center;color:#ddd;font-size:18px">✗</td>
+            <td style="padding:14px 18px;border-bottom:1px solid var(--border);text-align:center;color:#ddd;font-size:18px">✗</td>
+          </tr>
+          <!-- Free Shipping -->
+          <tr>
+            <td style="padding:14px 18px;color:var(--mid)">Free Shipping + Mystery Gift</td>
+            <td style="padding:14px 18px;border-left:2px solid var(--pink);border-right:2px solid var(--pink);border-bottom:2px solid var(--pink);background:#fff5fc;text-align:center">
+              <div style="width:36px;height:36px;border-radius:50%;background:var(--lime);display:inline-flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;color:var(--pink)">N</div>
+            </td>
+            <td style="padding:14px 18px;border-left:1px solid var(--pink-mid);border-right:1px solid var(--pink-mid);border-bottom:2px solid var(--pink-mid);background:#fff5fc;text-align:center"><div style="width:36px;height:36px;border-radius:50%;background:var(--lime);display:inline-flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;color:var(--pink)">N</div></td>
+            <td style="padding:14px 18px;text-align:center;color:#ddd;font-size:18px">✗</td>
+            <td style="padding:14px 18px;text-align:center;color:#ddd;font-size:18px">✗</td>
+            <td style="padding:14px 18px;text-align:center;color:#ddd;font-size:18px">✗</td>
+            <td style="padding:14px 18px;text-align:center;color:#ddd;font-size:18px">✗</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- REVIEWS SECTION -->
+<div class="section" style="background:var(--cream);text-align:center">
+  <div style="color:#f5a623;font-size:18px;margin-bottom:6px">★★★★★ <span style="font-size:13px;font-weight:700;color:#f5a623">4.8 stars</span></div>
+  <h2 style="font-family:'Manrope',sans-serif;font-size:36px;font-weight:700;color:var(--pink);line-height:1.2;margin-bottom:24px">Join 50,000+ Women<br>Who Decided to Come First</h2>
+
+  <!-- Filter tags -->
+  <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:32px">
+    <div style="background:var(--pink);color:#fff;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:600;cursor:pointer">Powerful & Effective</div>
+    <div style="background:#fff;color:var(--dark);border:1px solid var(--border);border-radius:20px;padding:8px 18px;font-size:13px;cursor:pointer">Cute Design</div>
+    <div style="background:#fff;color:var(--dark);border:1px solid var(--border);border-radius:20px;padding:8px 18px;font-size:13px;cursor:pointer">Discreet</div>
+    <div style="background:#fff;color:var(--dark);border:1px solid var(--border);border-radius:20px;padding:8px 18px;font-size:13px;cursor:pointer">Air Pulse Technology</div>
+    <div style="background:#fff;color:var(--dark);border:1px solid var(--border);border-radius:20px;padding:8px 18px;font-size:13px;cursor:pointer">Couples Approved</div>
+    <div style="background:#fff;color:var(--dark);border:1px solid var(--border);border-radius:20px;padding:8px 18px;font-size:13px;cursor:pointer">Beginner-Friendly</div>
+  </div>
+
+  <!-- Review cards -->
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;text-align:left;margin-bottom:40px">
+    <!-- Review 1 -->
+    <div style="background:#fff;border:1px solid var(--border);border-radius:16px;padding:24px">
+      <div style="color:#f5a623;font-size:15px;margin-bottom:12px">★★★★<span style="color:#ddd">★</span></div>
+      <p style="font-size:13px;line-height:1.75;color:var(--mid);margin-bottom:16px">I bought the little avocado after previously purchasing the lemon stimulator, thinking it would be an increase in power and sensation. Personally I prefer my original purchase, though I appreciate the quality and design.</p>
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <span style="font-size:13px;font-weight:600;color:var(--dark)">— Karla M.</span>
+        <span style="font-size:11px;color:var(--light)">6/9/2026 · Verified</span>
+      </div>
+    </div>
+    <!-- Review 2 -->
+    <div style="background:#fff;border:1px solid var(--border);border-radius:16px;padding:24px">
+      <div style="color:#f5a623;font-size:15px;margin-bottom:12px">★★★★★</div>
+      <p style="font-size:13px;line-height:1.75;color:var(--mid);margin-bottom:16px">Exquisite! I have purchased so many toys in the past from many different places. This is by far the best I have ever owned. The shape is perfect! You can even leave it out and none would know what it is... I also love that it gives me orgasms without penetration. It's just amazing! 🥑</p>
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <span style="font-size:13px;font-weight:600;color:var(--dark)">— Yuria P.</span>
+        <span style="font-size:11px;color:var(--light)">5/5/2026 · Verified</span>
+      </div>
+    </div>
+    <!-- Review 3 -->
+    <div style="background:#fff;border:1px solid var(--border);border-radius:16px;padding:24px">
+      <div style="color:#f5a623;font-size:15px;margin-bottom:12px">★★★★★</div>
+      <p style="font-size:13px;line-height:1.75;color:var(--mid);margin-bottom:16px">I've been using the rose for years, solo and with my partner. I decided to get the avocado cause of the shape and the good things I've heard. It's AMAZING to say the least. Out of body experience for sure. I use it on the 3rd setting and it's even better with my partner. Small but mighty.</p>
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <span style="font-size:13px;font-weight:600;color:var(--dark)">— Irina D.</span>
+        <span style="font-size:11px;color:var(--light)">3/25/2026 · Verified</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- UGC Videos -->
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;text-align:left">
+    <div style="border-radius:16px;overflow:hidden;cursor:pointer">
+      <div style="background:linear-gradient(180deg,#4a6b3a 0%,#1a2810 100%);aspect-ratio:.6;position:relative;display:flex;align-items:flex-end;padding:12px">
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;background:var(--pink);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px">▶</div>
+      </div>
+      <div style="padding:8px 4px;display:flex;justify-content:space-between;align-items:center">
+        <span style="font-size:11px;color:var(--mid);font-style:italic">"It's seriously powerful."</span>
+        <span style="font-size:16px">🎵</span>
+      </div>
+    </div>
+    <div style="border-radius:16px;overflow:hidden;cursor:pointer">
+      <div style="background:linear-gradient(180deg,#3a5b6a 0%,#102028 100%);aspect-ratio:.6;position:relative;display:flex;align-items:flex-end;padding:12px">
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;background:var(--pink);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px">▶</div>
+      </div>
+      <div style="padding:8px 4px;display:flex;justify-content:space-between;align-items:center">
+        <span style="font-size:11px;color:var(--mid);font-style:italic">"This toy takes me to the stars!"</span>
+        <span style="font-size:16px">🎵</span>
+      </div>
+    </div>
+    <div style="border-radius:16px;overflow:hidden;cursor:pointer">
+      <div style="background:linear-gradient(180deg,#5a3a6a 0%,#200828 100%);aspect-ratio:.6;position:relative;display:flex;align-items:flex-end;padding:12px">
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;background:var(--pink);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px">▶</div>
+      </div>
+      <div style="padding:8px 4px;display:flex;justify-content:space-between;align-items:center">
+        <span style="font-size:11px;color:var(--mid);font-style:italic">"It's super strong."</span>
+        <span style="font-size:16px">🎵</span>
+      </div>
+    </div>
+    <div style="border-radius:16px;overflow:hidden;cursor:pointer">
+      <div style="background:linear-gradient(180deg,#6a3a4a 0%,#280810 100%);aspect-ratio:.6;position:relative;display:flex;align-items:flex-end;padding:12px">
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;background:var(--pink);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px">▶</div>
+      </div>
+      <div style="padding:8px 4px;display:flex;justify-content:space-between;align-items:center">
+        <span style="font-size:11px;color:var(--mid);font-style:italic">"Not just cute — it's powerful."</span>
+        <span style="font-size:16px">🎵</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="section">
+  <h2 class="stitle">FAQ's</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Can I use my toy in the shower or bath? <span class="icon">+</span></button>
+      <div class="faq-a">Absolutely! The Avo is waterproof (IPX7 certified), so feel free to take it with you into the shower or tub for some steamy, wet fun.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">How do I charge my toy? <span class="icon">+</span></button>
+      <div class="faq-a">We've made charging Avo super easy and convenient for you. Avo comes with a pin-style charger that plugs into the back of your toy. Simply attach the other end into a USB port or adapter, and let it charge. Voila!</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">How does it like to be cleaned? <span class="icon">+</span></button>
+      <div class="faq-a">Taking care of this toy is simple and straightforward. You can clean it gently with a wet wipe or your favourite cleaning spray for a quick refresh. After cleaning, make sure to dry it thoroughly before storing it in a cool, dry place.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Can I use it with lubricant? <span class="icon">+</span></button>
+      <div class="faq-a">Yes, you can! However, we recommend using a water-based lubricant for the best experience with your toy. Silicone-based lubricants can also be used, but may damage the surface of the toy over time.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">What is your shipping policy? <span class="icon">+</span></button>
+      <div class="faq-a">All orders over US$65 receive free shipping. Shipping fees will be calculated and displayed at checkout. For our US customers, orders take around 3–7 business days. For our international friends, products typically arrive within 7–10 business days.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">What is the warranty period for products? <span class="icon">+</span></button>
+      <div class="faq-a">We've got you covered! All of our products come with a 12-month warranty. If your item is defective within this period, we'll happily replace it at no extra cost.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Is your packaging discreet? <span class="icon">+</span></button>
+      <div class="faq-a">While our standard shipping uses plain outer packaging, we offer an optional Discreet Shipping upgrade at checkout for those wanting additional privacy. This premium service includes unmarked packaging and neutral shipping labels to ensure maximum discretion during delivery.</div>
+    </div>
+  </div>
+  <div class="faq-center">Curious to learn more? Head to our <a href="#">Nancy Help Center</a> for everything you need to know.</div>
+</div>
+
+<!-- YOU MAY ALSO LIKE -->
+<div class="section cream">
+  <h2 class="stitle">You may also like</h2>
+  <div class="also-grid">
+    <div class="also-card">
+      <div class="also-img-wrap"><img src="https://hellonancy.com/cdn/shop/files/Untitled_Capture0776_2_4a5f299c-2c95-4dba-9f28-ab76844a5f11.webp?v=1762420124&width=600" alt="Lem"></div>
+      <div class="also-body">
+        <div class="also-name">Lem Clitoral Massager</div>
+        <div class="also-desc">Air-suction pulses designed to find your sweet spot. So good, you'll scream.</div>
+        <div><span class="also-price">₱5,600</span><span class="also-orig">₱10,100</span><span class="also-save">Save 45%</span></div>
+      </div>
+    </div>
+    <div class="also-card">
+      <div class="also-img-wrap" style="background:#f0f0f0;display:flex;align-items:center;justify-content:center;font-size:48px">🫐</div>
+      <div class="also-body">
+        <div class="also-name">Berri Tapping Clitoral Massager</div>
+        <div class="also-desc">Rhythmic tapping designed for edging, a slow build, and a deeper finish.</div>
+        <div><span class="also-price">₱5,500</span><span class="also-orig">₱11,000</span><span class="also-save">Save 50%</span></div>
+      </div>
+    </div>
+    <div class="also-card">
+      <div class="also-img-wrap" style="background:#f0f0f0;display:flex;align-items:center;justify-content:center;font-size:48px">🔮</div>
+      <div class="also-body">
+        <div class="also-name">Pixie Remote-Controlled Panty Vibrator</div>
+        <div class="also-desc">A wearable, remote-controlled vibrator made for hands-free play or shared partner fun.</div>
+        <div><span class="also-price">₱5,200</span><span class="also-orig">₱10,400</span><span class="also-save">Save 50%</span></div>
+      </div>
+    </div>
+    <div class="also-card">
+      <div class="also-img-wrap" style="background:#f0f0f0;display:flex;align-items:center;justify-content:center;font-size:48px">🍭</div>
+      <div class="also-body">
+        <div class="also-name">Lolly Mini Wand</div>
+        <div class="also-desc">A versatile mini wand for steady vibrations that hit every right spot.</div>
+        <div><span class="also-price">₱4,800</span><span class="also-orig">₱9,600</span><span class="also-save">Save 50%</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- FOOTER -->
+<div style="background:#fff;border-top:1px solid var(--border);padding:56px 40px 32px">
+  <div style="display:grid;grid-template-columns:1.8fr 1.2fr 1.2fr .8fr .8fr;gap:40px;margin-bottom:48px">
+
+    <!-- Newsletter col -->
+    <div>
+      <img src="https://hellonancy.com/cdn/shop/files/Nancy_Logo_Pink.png?v=1775058962&width=439" alt="Nancy" style="height:36px;object-fit:contain;margin-bottom:20px">
+      <h3 style="font-family:'Manrope',sans-serif;font-size:26px;font-weight:600;color:var(--dark);line-height:1.25;margin-bottom:12px">Stories & surprises<br>straight to your inbox</h3>
+      <div style="font-size:22px;margin-bottom:12px">💌</div>
+      <p style="font-size:13px;color:var(--mid);line-height:1.6;margin-bottom:20px">Be the first to enjoy product launches, sweet discounts, and insider treats.</p>
+      <div style="display:flex;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff">
+        <input type="email" placeholder="Email address" style="flex:1;padding:11px 14px;border:none;font-size:13px;outline:none;font-family:'Fraunces',serif;color:var(--dark)">
+        <button style="background:var(--pink);color:#fff;border:none;padding:11px 16px;cursor:pointer;font-size:16px">→</button>
+      </div>
+      <div style="display:flex;gap:18px;margin-top:24px;font-size:20px;color:var(--dark)">
+        <span style="cursor:pointer">f</span>
+        <span style="cursor:pointer">📸</span>
+        <span style="cursor:pointer">♪</span>
+        <span style="cursor:pointer">in</span>
+      </div>
+    </div>
+
+    <!-- About col -->
+    <div>
+      <div style="font-size:16px;font-weight:600;color:var(--dark);margin-bottom:16px">About</div>
+      <p style="font-size:13px;color:var(--mid);line-height:1.8;margin-bottom:16px">At Nancy, we're committed to breaking the taboo and creating a safe and welcoming space for everyone to explore their sexual curiosities.</p>
+      <p style="font-size:13px;color:var(--mid);line-height:1.8">Care & Bloom Limited,<br>2F, Hilltop Plaza,<br>49 Hollywood Rd,<br>Central,<br>Hong Kong.</p>
+    </div>
+
+    <!-- Get in touch col -->
+    <div>
+      <div style="font-size:16px;font-weight:600;color:var(--dark);margin-bottom:16px">Get in touch</div>
+      <p style="font-size:13px;color:var(--mid);line-height:1.8;margin-bottom:10px"><strong style="color:var(--dark)">Care:</strong> care@hellonancy.com</p>
+      <p style="font-size:13px;color:var(--mid);line-height:1.8"><strong style="color:var(--dark)">Partnerships:</strong><br>marketing@hellonancy.com</p>
+    </div>
+
+    <!-- Resources col -->
+    <div>
+      <div style="font-size:16px;font-weight:600;color:var(--dark);margin-bottom:16px">Resources</div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <a href="#" style="font-size:13px;color:var(--mid);text-decoration:none">Guides</a>
+        <a href="#" style="font-size:13px;color:var(--mid);text-decoration:none">Lem Comparison</a>
+        <a href="#" style="font-size:13px;color:var(--mid);text-decoration:none">Wall of Came</a>
+      </div>
+    </div>
+
+    <!-- Policies col -->
+    <div>
+      <div style="font-size:16px;font-weight:600;color:var(--dark);margin-bottom:16px">Policies</div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <a href="#" style="font-size:13px;color:var(--mid);text-decoration:none">Contact us</a>
+        <a href="#" style="font-size:13px;color:var(--mid);text-decoration:none">Privacy policy</a>
+        <a href="#" style="font-size:13px;color:var(--mid);text-decoration:none">Terms of service</a>
+        <a href="#" style="font-size:13px;color:var(--mid);text-decoration:none">Help Center</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div style="border-top:1px solid var(--border);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+    <div style="font-size:12px;color:var(--light)">© 2026, Hello Nancy | All rights reserved</div>
+    <div style="display:flex;align-items:center;gap:6px">
+      <span style="font-size:12px;color:var(--mid);margin-right:4px">🇵🇭 Philippines (PHP ₱)</span>
+      <div style="display:flex;gap:4px;flex-wrap:wrap">
+        <img src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/amex.svg" style="height:22px" alt="Amex" onerror="this.style.display='none'">
+        <span style="background:#f5f5f5;border:1px solid #ddd;border-radius:4px;padding:2px 6px;font-size:10px;font-weight:600;color:var(--dark)">ApplePay</span>
+        <span style="background:#f5f5f5;border:1px solid #ddd;border-radius:4px;padding:2px 6px;font-size:10px;font-weight:600;color:var(--dark)">Google Pay</span>
+        <span style="background:#f5f5f5;border:1px solid #ddd;border-radius:4px;padding:2px 6px;font-size:10px;font-weight:600;color:var(--dark)">Mastercard</span>
+        <span style="background:#f5f5f5;border:1px solid #ddd;border-radius:4px;padding:2px 6px;font-size:10px;font-weight:600;color:var(--dark)">Shop Pay</span>
+        <span style="background:#f5f5f5;border:1px solid #ddd;border-radius:4px;padding:2px 6px;font-size:10px;font-weight:600;color:var(--dark)">Visa</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- IP Protection -->
+  <div style="margin-top:20px;display:flex;align-items:center;gap:8px;font-size:11px;color:var(--light)">
+    <span style="width:28px;height:28px;border-radius:50%;background:#f5f5f5;border:1px solid var(--border);display:inline-flex;align-items:center;justify-content:center;font-size:14px">🛡️</span>
+    <div><strong style="color:var(--dark)">IP Protected by Bustem™</strong><br>Brand Verified | Fraud Protected | Enforcement</div>
+  </div>
+</div>
+
+<script>
+// Gallery images
+const imgs = [
+  "https://hellonancy.com/cdn/shop/files/Untitled_Capture0776_2_4a5f299c-2c95-4dba-9f28-ab76844a5f11.webp?v=1762420124&width=900",
+  "https://hellonancy.com/cdn/shop/files/Untitled_Capture0203.jpg?v=1762420124&width=900",
+  "https://hellonancy.com/cdn/shop/files/Untitled_Capture0151.jpg?v=1762420124&width=900",
+  "https://hellonancy.com/cdn/shop/files/Untitled_Capture0732.jpg?v=1762420124&width=900",
+  "https://hellonancy.com/cdn/shop/files/Untitled_Capture0862.jpg?v=1762420124&width=900",
+  "https://hellonancy.com/cdn/shop/files/Untitled_Capture0517.jpg?v=1762420124&width=900",
+  "https://hellonancy.com/cdn/shop/files/Untitled_Capture0514.jpg?v=1762420124&width=900"
+];
+let current = 0;
+
+function buildGallery() {
+  const dots = document.getElementById("galleryDots");
+  const thumbs = document.getElementById("galleryThumbs");
+  imgs.forEach((src, i) => {
+    // dot
+    const d = document.createElement("div");
+    d.className = "gdot" + (i === 0 ? " active" : "");
+    d.onclick = () => goTo(i);
+    dots.appendChild(d);
+    // thumb
+    const t = document.createElement("div");
+    t.className = "gthumb" + (i === 0 ? " active" : "");
+    t.innerHTML = `<img src="${src.replace("width=900","width=200")}" alt="">`;
+    t.onclick = () => goTo(i);
+    thumbs.appendChild(t);
+  });
+}
+
+function goTo(n) {
+  current = (n + imgs.length) % imgs.length;
+  document.getElementById("mainImgEl").src = imgs[current];
+  document.querySelectorAll(".gdot").forEach((d,i) => d.classList.toggle("active", i===current));
+  document.querySelectorAll(".gthumb").forEach((t,i) => t.classList.toggle("active", i===current));
+  document.querySelectorAll(".gthumb")[current].scrollIntoView({behavior:"smooth",block:"nearest",inline:"center"});
+}
+
+function changeImg(dir) { goTo(current + dir); }
+
+// Tab switcher
+function switchTab(btn, id) {
+  document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+  document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
+  btn.classList.add("active");
+  document.getElementById(id).classList.add("active");
+}
+
+// FAQ toggle
+function toggleFaq(btn) {
+  const answer = btn.nextElementSibling;
+  const isOpen = answer.classList.contains("open");
+  document.querySelectorAll(".faq-a.open").forEach(a => { a.classList.remove("open"); a.previousElementSibling.classList.remove("open"); });
+  if (!isOpen) { answer.classList.add("open"); btn.classList.add("open"); }
+}
+
+buildGallery();
+</script>
+</body>
+</html>
